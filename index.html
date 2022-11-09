@@ -52,7 +52,10 @@
     width: 100vw;
   }
 }
-
+.rootDiv{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 .menu-mobile{
   visibility: hidden
 }
@@ -86,6 +89,9 @@
 .nav-items ul li:hover::after{
   width: 100%;
 }
+.row-two .description .div{
+  margin-bottom: 29px;
+}
 .col-6 button{
 
   position: absolute;
@@ -95,6 +101,7 @@
   background: hsl(5, 85%, 63%);
   letter-spacing: 2px;
   color: #FFFDFA;
+  
 }
 .newHeading{
   color: #FFFDFA;
@@ -108,9 +115,13 @@
   padding-bottom: 29px;
   border-bottom: #5E607A;;
 }
+.rowTwo .col-9{
+  border: 0px solid greenyellow;
+}
 .rowTwo .col-3{
   background: #00001A;
-  max-height: 100%;
+  max-height: 511px;
+  border:0px solid yellow
 }
 .col-9{
   padding: 0;
@@ -122,18 +133,55 @@
 .row-two{
   height: 511px;
 }
-.rowTwo .col-3{
-  height: 511px;
+
+.row-two .description,.row-two .heading{
+  padding: 0 ;
 }
+
+
 .row-two .col-6{
   height: 130px;
 }
+.lastColumn{
+  padding: 0;
+  margin-top: 71px;
+  height: 129px;
+}
+.last-flex{
+  padding: 0;
+  gap:30px;
+}
 
+.row-two .col-12{
+  margin-bottom: 28px;
+}
+.imageDiv{
+  display: inline;
+  
+}
+.imageDivDesc{
+  display: inline;
+  text-align: left;
+
+}
+.lastFlexOne,.lastFlexTwo,.lastFlexThree{
+  display: flex;
+  gap:24px;
+  
+}
+.lastFlexOne .imageDiv{
+  width: 100px;
+  
+}
 @media(max-width:700px){
  .body{
   width: 100vw;
   overflow-x: hidden;
  }
+ .rootDiv{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
   .nav-items{
     position: fixed;
     background: #ffffff;
@@ -180,13 +228,19 @@
     bottom: 0;
     
   }
+  .last-flex{
+  display: flex;
+  gap:32px;
+  flex-direction: column;
+  
+}
 }
   </style>
 </head>
 <body>
-  <div style="position: relative;overflow-x: hidden;">
-    <div class="row"style="display: flex;position: relative;border:0px solid black;">
-      <div class="col-1"><img src="./assets/images/logo.svg"/></div>
+  <div class="rootDiv" style="position: relative;">
+    <div class="row"style="display: flex;">
+      <div class="col-1"><img src="./assets/images/logo.svg" width="64.09px" height="39.9px"/></div>
       <div class="nav-items" id="nav-items">
         <div class="menu-close" onclick="hideMenu()"><img src="./assets/images/icon-menu-close.svg"/></div>
           <ul>
@@ -224,31 +278,39 @@
           <div class="newHeading" >Hydrogen VS Electric Cars</div>
           <div class="newDesc" >Will hydrogen-fueled cars ever catch up to EVs?</div>
         </div>
+        <div style="border: 1px solid #5E607A;height: 0;"></div>
         <div>
           <div class="newHeading">The Downsides of AI Artistry</div>
           <div class="newDesc">What are the possible adverse effects of on-demand AI image generation?</div>
         </div>
+        <div style="border: 1px solid #5E607A;;"></div>
         <div>
           <div class="newHeading">Is VC Funding Drying Up?</div>
           <div class="newDesc">Private funding by VC firms is down 50% YOY. We take a look at what that means.</div>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 lastColumn">
         <div class="last-flex">
-          <div>
-            01
-            Reviving Retro PCs
-            What happens when old PCs are given modern upgrades?
+          <div class="lastFlexOne">
+            <div class="imageDiv"><img src="./assets/images/image-retro-pcs.jpg" width="100" height="127"/></div>
+            <div class="imageDivDesc">01
+              Reviving Retro PCs
+              What happens when old PCs are given modern upgrades?
+            </div>
           </div>
-          <div>
-            02
-            Top 10 Laptops of 2022
-            Our best picks for various needs and budgets.
+          <div class="lastFlexTwo">
+            <div class="imageDiv"><img src="./assets/images/image-top-laptops.jpg" width="100" height="127"/></div>
+            <div class="imageDivDesc">02
+              Top 10 Laptops of 2022
+              Our best picks for various needs and budgets.
+            </div>
           </div>
-          <div>
-            03
-            The Growth of Gaming
-            How the pandemic has sparked fresh opportunities.
+          <div class="lastFlexThree">
+            <div class="imageDiv"><img src="./assets/images/image-gaming-growth.jpg" width="100" height="127"/></div>
+            <div class="imageDivDesc">03
+              The Growth of Gaming
+              How the pandemic has sparked fresh opportunities.
+            </div>
           </div>
         </div>
       </div>
